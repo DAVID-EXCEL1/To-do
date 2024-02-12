@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+    body {
+        background-color: rgb(141, 141, 156);
+    }
+    </style>
+</head>
+
+<body>
+    <button id="button">Change Color</button>
+    <input type="text" id="inp" value="" />
+    <div id="response"></div>
+    <div id="show">
+
+    </div>
+
+<a href="todo.html">Todo</button>
+    <script>
+        console.log();
+        const button = document.getElementById('button');
+        button.addEventListener('click', ()=>{
+            const Rm1 = Math.round(Math.random() * 255)
+            const Rm2 = Math.round(Math.random() * 255)
+            const Rm3 = Math.round(Math.random() * 255)
+            const color = `rgb(${Rm1},${Rm2},${Rm3})`;
+            document.body.style.backgroundColor = color
+            console.log(Rm1, Rm2, Rm3);
+            const show = document.getElementById('show');
+            show.innerHTML= `${Rm1} ${Rm2} ${Rm3}`
+        });
+
+        const inputText = document.getElementById('inp');
+        inputText.addEventListener('keyup', (e)=>{
+            console.log(e.target.value);
+            const response = document.getElementById('response');
+            response.innerHTML = e.target.value;
+        });
+    </script>
+
+</body>
+
+</html>
